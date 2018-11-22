@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 317733fdf3f1c334f892a4f171790f8c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - "p\xE5": {fileID: 82658034893314828, guid: e530084419fd95b4d89542c8de856f1e, type: 2}
+  - ExplosionGO: {fileID: 1617138083568890, guid: 2894ebb97ce997d40bef64106a4d42e0,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
