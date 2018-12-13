@@ -2,68 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour {
+public class EnemySpawner : MonoBehaviour
+{
+   
+    public GameObject EnemyToSpawn;
 
-    public GameObject EnemyGO;
-    
+    public float maxSpawnTime = 2f;
+    public float minSpawnTime = 0.5f;
 
-    float maxSpawnRateInSeconds;
-	// Use this for initialization
-	void Start ()
+    public float neededScore = 0f;
+    public float reduceTime = 0.1f;
+    private float nextSpawnTime;
+
+
+    private float timer;
+    // Use this for initialization
+    void Start()
     {
-        Invoke("SpawnEnemy", maxSpawnRateInSeconds);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+     
+    }
 
-        if (Input.GetKey(KeyCode.O))
-            SpawnEnemy();   
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer > nextSpawnTime)
+            SpawnEnemy();
+
+    }
 
 
     void SpawnEnemy()
     {
-        Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
-
-        Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
-
-        GameObject anEnemy = (GameObject)Instantiate(EnemyGO);
-        anEnemy.transform.position = new Vector2(min.x , Random.Range(min.y, max.y));
-
-      
-
-        ScheduleNextEnemySpawn();
-    }
-
-    void ScheduleNextEnemySpawn()
-    {
-        float spawnInSeconds;
-
-        if(Score.scoreValue < 15)
+        if (Score.scoreValue >= neededScore)
         {
+            Debug.Log("Spawning");
+            Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(-0.05f, 0.1f));
+            Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 0.9f));
 
-        if (maxSpawnRateInSeconds > 2f)
-        {
-            spawnInSeconds = Random.Range(2f, maxSpawnRateInSeconds);
+            GameObject newEnemy = Instantiate(EnemyToSpawn);
+            newEnemy.transform.position = new Vector2(min.x, Random.Range(min.y, max.y));
+            maxSpawnTime -= reduceTime;
+            if (maxSpawnTime < minSpawnTime)
+                maxSpawnTime = minSpawnTime;
         }
-        else
-
-            spawnInSeconds = 2f;
-
-        Invoke("SpawnEnemy", spawnInSeconds);     
-    }
-        else
-        {
-            if (maxSpawnRateInSeconds > 1f)
-            {
-                spawnInSeconds = Random.Range(1f, maxSpawnRateInSeconds);
-            }
-            else
-
-                spawnInSeconds = 1f;
-
-            Invoke("SpawnEnemy", spawnInSeconds);
-        }
+        nextSpawnTime += Random.Range(minSpawnTime, maxSpawnTime);
     }
 }
+
+

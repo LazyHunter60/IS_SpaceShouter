@@ -21,7 +21,7 @@ public class PlayerShooting : MonoBehaviour {
     {
         cooldownTimer -= Time.deltaTime;
 
-        if(Input.GetKey(KeyCode.Space) && cooldownTimer <= 0 && Time.timeScale != 0)
+        if(Input.GetMouseButtonDown(0) && cooldownTimer <= 0 && Time.timeScale != 0)
         {
             Debug.Log("Pew");
             cooldownTimer = fireDelay;

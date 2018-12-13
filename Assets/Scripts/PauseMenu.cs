@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
         else
         {
             canvas.gameObject.SetActive(false);
-            Time.timeScale = 1;
+            Time.timeScale = 1;            
         }
     }
 }

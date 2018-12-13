@@ -8,6 +8,9 @@ TagManager:
   - Ship
   - BigShip
   - EnemyLaser
+  - PlayerLaserDestroyer
+  - Wall
+  - MusicDestroyer
   layers:
   - Default
   - TransparentFX
@@ -22,8 +25,8 @@ TagManager:
   - Enemy
   - EnemyProjectile
   - BigEnemy
-  - 
-  - 
+  - PlayerLaserDestroyer
+  - Wall
   - 
   - 
   - 

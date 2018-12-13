@@ -17,9 +17,10 @@ public class DestroyEnemy : MonoBehaviour {
         if (collision.collider.gameObject.tag == "Laser")
         {
             Destroy(gameObject);
-            PlayExlposion();
-            Score.scoreValue += 1;
+            PlayExlposion();       
+            Score.scoreValue += 1;            
         }
+
         else if (collision.collider.gameObject.tag == "Player")
         {
             Destroy(gameObject);

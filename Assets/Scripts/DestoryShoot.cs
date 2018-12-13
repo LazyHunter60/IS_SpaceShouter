@@ -31,6 +31,12 @@ public class DestoryShoot : MonoBehaviour
             PlayExlposion();
             Destroy(gameObject);
         }
+
+        else if (collision.collider.gameObject.tag == "PlayerLaserDestroyer")
+        {
+            Destroy(gameObject);
+        }
+
         else if (transform.position.x > 9.93225f || transform.position.x < -9.93225f || transform.position.y > 5.5f || transform.position.y < -5.5f)
         {
             Destroy(gameObject);
