@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour {
 
-    public AudioSource tickSource;
+    public AudioSource tickSource; //ljudkällan (vart ljudet spelas ifrån)
     public GameObject BulletPrefab;
 
     public float fireDelay = 0.25f;

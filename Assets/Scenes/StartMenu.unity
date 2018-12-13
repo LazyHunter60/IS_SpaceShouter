@@ -773,7 +773,6 @@ GameObject:
   - component: {fileID: 1078040470}
   - component: {fileID: 1078040469}
   - component: {fileID: 1078040471}
-  - component: {fileID: 1078040472}
   - component: {fileID: 1078040473}
   m_Layer: 0
   m_Name: MainMenuMusic
@@ -795,7 +794,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -896,22 +895,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1078040468}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5051bb60367b2a0418239e9878f716b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkInGame: 0
-  audioSource: {fileID: 0}
-  songOne: {fileID: 0}
-  songTwo: {fileID: 0}
---- !u!114 &1078040472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1078040468}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8481142fcd45e8c4cbc7977e3d8c12cb, type: 3}
   m_Name: 

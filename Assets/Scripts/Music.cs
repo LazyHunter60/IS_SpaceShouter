@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Music : MonoBehaviour {
+public class Music : MonoBehaviour
+{
 
     public bool checkInGame;
 
@@ -29,14 +30,13 @@ public class Music : MonoBehaviour {
     // Use this for initialization
     protected virtual void Awake()
     {
-       // GameObject musicDestroyer = GameObject.Find("MusicDestroyer");
-       
+        // GameObject musicDestroyer = GameObject.Find("MusicDestroyer");
+
         GameObject[] objs = GameObject.FindGameObjectsWithTag("music");
 
         if (objs.Length > 1)
             Destroy(this.gameObject);
 
         DontDestroyOnLoad(this.gameObject);
-        }      
-    }    
-
+    }
+}
